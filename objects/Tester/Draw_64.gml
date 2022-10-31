@@ -17,14 +17,16 @@ var cardx = margin;
 var cardy = margin;
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
+draw_set_font(fntRegular);
 draw_text(cardx, cardy + card_size.height + margin, card_name);
 draw_text(cardx, cardy + card_size.height + (margin * 3), card_desc);
 draw_sprite_ext(card_image, 0, cardx, cardy, card_scale, card_scale, 0, c_white, 1);
-
-draw_text(cardx + card_size.width + margin, margin * 2, 
+draw_set_font(fntBold);
+draw_text(cardx + card_size.width + margin, margin * 2, "Campaign")
+draw_set_font(fntRegular);
 i = 0;
 repeat(array_length(card_eff_story)) {
-	draw_text(cardx + card_size.width + margin, margin * 2, card_eff_story[i]);
+	draw_text(cardx + card_size.width + margin, margin * 4, card_eff_story[i]);
 	i++;
 }
 
